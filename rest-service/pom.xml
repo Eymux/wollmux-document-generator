@@ -44,6 +44,13 @@
                     </excludes>
                     <srcExtensions>.java,.kt,.conf,.properties</srcExtensions>
                 </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>apitool</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
@@ -62,6 +69,11 @@
         <dependency>
             <groupId>org.jooby</groupId>
             <artifactId>jooby-akka</artifactId>
+            <version>1.5.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jooby</groupId>
+            <artifactId>jooby-apitool</artifactId>
             <version>1.5.1</version>
         </dependency>
     </dependencies>

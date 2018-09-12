@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>de.muenchen.wollmux-document-generator</groupId>
+    <artifactId>rest-service</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <parent>
+        <groupId>de.muenchen</groupId>
+        <artifactId>wollmux-document-generator</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <properties>
+        <application.class>de.muenchen.wollmux_document_generator.rest_service.Main</application.class>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>10</maven.compiler.source>
+        <maven.compiler.target>10</maven.compiler.target>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.jooby</groupId>
+                <artifactId>jooby-maven-plugin</artifactId>
+                <version>1.5.1</version>
+                <configuration>
+                    <mainClass>${application.class}</mainClass>
+                    <commands>
+                    </commands>
+                    <compiler>on</compiler>
+                    <fork>false</fork>
+                    <vmArgs></vmArgs>
+                    <debug>true</debug>
+                    <includes>
+                        <include>**/*.class</include>
+                        <include>**/*.conf</include>
+                        <include>**/*.properties</include>
+                    </includes>
+                    <excludes>
+                    </excludes>
+                    <srcExtensions>.java,.kt,.conf,.properties</srcExtensions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.jooby</groupId>
+            <artifactId>jooby</artifactId>
+            <version>1.5.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jooby</groupId>
+            <artifactId>jooby-netty</artifactId>
+            <version>1.5.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jooby</groupId>
+            <artifactId>jooby-akka</artifactId>
+            <version>1.5.1</version>
+        </dependency>
+    </dependencies>
+</project>
